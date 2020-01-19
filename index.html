@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../style/js/jquery-1.11.0.min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			section{
+				width: 600px;
+				overflow: hidden;
+				margin: 100px auto;
+			}
+			#box{
+				width: 100%;
+				overflow: hidden;
+			}
+			ul{
+				display: block;
+			}
+			li{
+				list-style: none;
+			}
+			#tab_menu{
+				width: 100px;
+				float: left;
+			}
+			#tab_menu li{
+				
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				background: #3B2B23;
+				color: #fff;
+			}
+			#tab_menu li a{
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				color: #fff;
+			}
+			#tab_content{
+				width: 470px;
+				border: 1px solid #555555;
+				float: left;
+			}
+			.show{
+				display: block;
+			}
+			.hide{
+				display: none;
+			}
+			.on{
+				background: #042D3D!important;
+				/* color: ; */
+			}
+			#ul {
+				width: 300px;
+				background:pink;
+				margin: 50px auto;
+			}
+			#ul>li {
+			    line-height: 50px;
+			    text-align: center;
+			    border-bottom: 1px solid #ccc;
+			}
+			#ul>li>ol {
+			    background: paleturquoise;
+			    display: none;
+			}
+			#ul>li>ol>li {
+			    line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div id="box">
+				<div id="tab_menu">
+					<ul>
+						<li>
+							<a href="##">111</a>
+						</li>
+						<li>
+							<a href="##">111</a>
+						</li>
+						<li>
+							<a href="##">111</a>
+						</li>
+					</ul>
+				</div>
+				<div id="tab_content">
+					<div class="show">
+						<ul id="ul">
+						    <li>
+						        <p>01</p>
+						        <ol>
+						            <li>111</li>
+						            <li>111</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>01</p>
+						        <ol>
+						            <li>111</li>
+						            <li>111</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>01</p>
+						        <ol>
+						            <li>111</li>
+						            <li>111</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>01</p>
+						        <ol>
+						            <li>111</li>
+						            <li>111</li>
+						           
+						        </ol>
+						    </li>
+						</ul>
+					</div>
+					<div class="hide">
+						<ul id="ul">
+						    <li>
+						        <p>02</p>
+						        <ol>
+						            <li>222</li>
+						            <li>222</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>02</p>
+						        <ol>
+						            <li>222</li>
+						            <li>222</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>02</p>
+						        <ol>
+						            <li>222</li>
+						            <li>222</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>02</p>
+						        <ol>
+						            <li>222</li>
+						            <li>222</li>
+						           
+						        </ol>
+						    </li>
+						</ul>
+					</div>
+					<div class="hide">
+						<ul id="ul">
+						    <li>
+						        <p>03</p>
+						        <ol>
+						            <li>333</li>
+						            <li>333</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						        <p>03</p>
+						        <ol>
+						            <li>333</li>
+						            <li>333</li>
+						           
+						        </ol>
+						    </li>
+						    <li>
+						       <p>03</p>
+						       <ol>
+						           <li>333</li>
+						           <li>333</li>
+						          
+						       </ol>
+						    </li>
+						    <li>
+						       <p>03</p>
+						       <ol>
+						           <li>333</li>
+						           <li>333</li>
+						          
+						       </ol>
+						    </li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<script>
+			$('#tab_menu li').mouseover(function() {
+				var _index = $(this).index();
+				$(this).addClass('on').siblings().removeClass('on');
+				$('#tab_content>div').eq(_index).show().siblings().hide();
+			});
+			$("#ul>li>p").click(function(){
+			    $(this).next().slideDown().end().parent().siblings()
+			    .children("ol").hide(500);
+			});  
+		</script>
+	</body>
+</html>
